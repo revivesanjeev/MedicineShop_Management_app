@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import MedicineContext from "./MedicineContext";
 
-const Cart = ({ cart }) => {
+const Cart = () => {
+  const { cart } = useContext(MedicineContext);
+
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0

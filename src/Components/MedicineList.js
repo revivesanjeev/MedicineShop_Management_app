@@ -1,10 +1,9 @@
+import React, { useContext } from "react";
+import MedicineContext from "./MedicineContext";
 
+const MedicineList = () => {
+  const { medicines, addToCart } = useContext(MedicineContext);
 
-import React from "react";
-
-
-
-const MedicineList = ({ medicines, addToCart }) => {
   const handleAddToCart = (medicine) => {
     if (medicine.quantity > 0) {
       addToCart({ ...medicine, quantity: 1 });

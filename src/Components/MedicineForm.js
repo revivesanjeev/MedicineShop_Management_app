@@ -1,14 +1,14 @@
+import React, { useState, useContext } from "react";
+import MedicineContext from "./MedicineContext";
+import "./MedicineForm.css"; // Import the CSS file
 
-
-
-import React, { useState } from "react";
-
-const MedicineForm = ({ addMedicine }) => {
+const MedicineForm = () => {
+  const { addMedicine } = useContext(MedicineContext);
   const [medicine, setMedicine] = useState({
     name: "",
     description: "",
-    price: 0,
-    quantity: 0,
+    price: "",
+    quantity: "",
   });
 
   const handleChange = (e) => {
@@ -19,7 +19,7 @@ const MedicineForm = ({ addMedicine }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addMedicine(medicine);
-    setMedicine({ name: "", description: "", price: 0, quantity: 0 });
+    setMedicine({ name: "", description: "", price: "", quantity: "" });
   };
 
   return (
