@@ -1,4 +1,4 @@
-/* input box */
+/* MedicineForm.css  */
 form {
   max-width: 500px;
   margin: 0 auto;
@@ -8,8 +8,9 @@ form {
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 /* css for input box */
-input {
+input, select {
   width: calc(100% - 20px);
   padding: 10px;
   margin: 10px 0;
@@ -36,4 +37,9 @@ button:hover {
 
 button:active {
   background-color: #1e7e34;
+}
+
+img {
+  display: block;
+  margin-top: 10px;
 }

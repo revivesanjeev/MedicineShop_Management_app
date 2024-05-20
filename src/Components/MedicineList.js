@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import MedicineContext from "./MedicineContext";
+import "./MedicineList.css"; // Ensure this line imports the CSS file where the `.out-of-stock` class is defined
 
 const MedicineList = () => {
   const { medicines, addToCart } = useContext(MedicineContext);
@@ -27,7 +28,23 @@ const MedicineList = () => {
             </p>
             <p>
               <strong>Quantity Available:</strong>{" "}
-              {medicine.quantity > 0 ? medicine.quantity : "Out of Stock"}
+              {medicine.quantity > 0 ? (
+                medicine.quantity
+              ) : (
+                <span className="out-of-stock">Out of Stock</span>
+              )}
+            </p>
+            <p>
+              <strong>Image:</strong>{" "}
+              <img
+                src={medicine.image}
+                alt={medicine.name}
+                style={{ width: "100px" }}
+              />
+            </p>
+            <p>
+              <strong>Storage Location:</strong> {medicine.floor},{" "}
+              {medicine.rack}
             </p>
             <button
               onClick={() => handleAddToCart(medicine)}
