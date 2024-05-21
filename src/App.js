@@ -9,7 +9,7 @@ const App = () => {
   return (
     <MedicineProvider>
       <div>
-        <h1 className="header_text">Medicine Shop Management</h1>
+        <h1 className="header_text">Sanjeev Medicine Shop </h1>
         <MedicineForm />
         <div className="content">
           <div className="medicine-list-container">

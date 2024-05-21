@@ -54,6 +54,9 @@ export const MedicineProvider = ({ children }) => {
   const [medicines, setMedicines] = useState(initialMedicines);
   const [cart, setCart] = useState([]);
 
+
+
+  
   const addMedicine = (medicine) => {
     setMedicines((prevMedicines) => {
       const index = prevMedicines.findIndex((m) => m.name === medicine.name);
@@ -65,6 +68,10 @@ export const MedicineProvider = ({ children }) => {
       }
     });
   };
+
+
+
+
 
   const addToCart = (medicine) => {
     setCart((prevCart) => {
@@ -88,6 +95,11 @@ export const MedicineProvider = ({ children }) => {
     );
   };
 
+
+
+
+
+
   const removeFromCart = (medicine) => {
     setCart((prevCart) => {
       const updatedCart = prevCart
@@ -109,6 +121,9 @@ export const MedicineProvider = ({ children }) => {
       )
     );
   };
+
+
+
 
   return (
     <MedicineContext.Provider
