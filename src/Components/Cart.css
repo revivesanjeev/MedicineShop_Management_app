@@ -1,3 +1,27 @@
+.cart-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart {
+  width: 50%; /* Adjust as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
 .decrement-button {
   width: 50px; /* Diameter of the circle */
   height: 50px; /* Diameter of the circle */

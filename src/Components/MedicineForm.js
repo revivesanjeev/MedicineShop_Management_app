@@ -34,7 +34,12 @@ const MedicineForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMedicine(medicine);
+    const { floor, rack, ...rest } = medicine;
+    const newMedicine = {
+      ...rest,
+      storageLocation: `${floor}, ${rack}`,
+    };
+    addMedicine(newMedicine);
     setMedicine({
       name: "",
       description: "",
@@ -119,7 +124,7 @@ const MedicineForm = () => {
         <option value="Rack 2">Rack 2</option>
         <option value="Rack 3">Rack 3</option>
         <option value="Rack 4">Rack 4</option>
-        <option value="Rack 5">Rack 6</option>
+        <option value="Rack 5">Rack 5</option>
       </select>
       <button type="submit">Add Medicine</button>
     </form>

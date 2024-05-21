@@ -8,7 +8,7 @@
 
 .medicine-list,
 .cart {
-  width: 48%;
+  width: 40%;
 }
 
 input[type="text"] {
@@ -34,7 +34,13 @@ li {
 }
 
 
+button:hover {
+  background-color: #218838;
+}
 
+button:active {
+  background-color: #1e7e34;
+}
 
 button.disabled {
   background-color: black;

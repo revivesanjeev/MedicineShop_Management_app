@@ -12,8 +12,12 @@ const App = () => {
         <h1>Medicine Shop Management</h1>
         <MedicineForm />
         <div className="content">
-          <MedicineList />
-          <Cart />
+          <div className="medicine-list-container">
+            <MedicineList />
+          </div>
+          <div className="cart-container">
+            <Cart />
+          </div>
         </div>
       </div>
     </MedicineProvider>

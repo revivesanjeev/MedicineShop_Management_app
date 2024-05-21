@@ -23,7 +23,7 @@ export const MedicineProvider = ({ children }) => {
       price: 10,
       quantity: 50,
       image: Ibuprofen,
-      storageLocation: "3rd floor, Rack 4",
+      storageLocation: "2nd floor, Rack 4",
     },
     {
       name: "Aspirin",
@@ -31,7 +31,7 @@ export const MedicineProvider = ({ children }) => {
       price: 8,
       quantity: 5,
       image: Aspirin,
-      storageLocation: "5th floor, rack 4",
+      storageLocation: "4th floor, Rack 4",
     },
     {
       name: "Cough Syrup",
@@ -39,7 +39,7 @@ export const MedicineProvider = ({ children }) => {
       price: 15,
       quantity: 40,
       image: CoughSyrup,
-      storageLocation: "5th floor, rack 1",
+      storageLocation: "2nd floor, Rack 1",
     },
     {
       name: "Antacid",
@@ -47,7 +47,7 @@ export const MedicineProvider = ({ children }) => {
       price: 6,
       quantity: 60,
       image: Antacid,
-      storageLocation: "5th floor, rack 4",
+      storageLocation: "4th floor, Rack 4",
     },
   ];
 
