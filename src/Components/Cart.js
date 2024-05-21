@@ -63,9 +63,12 @@ const Cart = () => {
         />
         <button onClick={applyCoupon}>Apply Coupon</button>
       </div>
-      <h3>Total Price: ₹{discountedPrice.toFixed(2)}</h3>
+      <h3>Total Price: ₹{totalPrice.toFixed(2)}</h3>
       {discount > 0 && (
-        <p>You saved ₹{(totalPrice * discount).toFixed(2)} with the coupon!</p>
+        <h3> Discounted Price: ₹{discountedPrice.toFixed(2)}</h3>
+      )}
+      {discount > 0 && (
+        <p>You saved ₹{(totalPrice * discount).toFixed(2)} with coupon!</p>
       )}
 
       <ReactToPrint
@@ -110,9 +113,12 @@ const CartToPrint = React.forwardRef((props, ref) => {
           </li>
         ))}
       </ul>
-      <h3>Total Price: ₹{discountedPrice.toFixed(2)}</h3>
+      <h3>Total Price: ₹{totalPrice.toFixed(2)}</h3>
       {discount > 0 && (
-        <p>You saved ₹{(totalPrice * discount).toFixed(2)} with the coupon!</p>
+        <h3> Discounted Price: ₹{discountedPrice.toFixed(2)}</h3>
+      )}
+      {discount > 0 && (
+        <p>You saved ₹{(totalPrice * discount).toFixed(2)} with coupon!</p>
       )}
     </div>
   );

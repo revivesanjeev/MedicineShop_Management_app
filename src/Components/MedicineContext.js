@@ -1,9 +1,9 @@
 import React, { createContext, useState } from "react";
-import Paracetamol from "./Paracetamol+Dolo-650+Uses-+Side+Effects-+Composition+and+Price.jpg";
-import Ibuprofen from "./ibuprofen-400-mg-bp-tablets.jpg";
-import Aspirin from "./aspirin-dispersible-tablets.jpg";
-import CoughSyrup from "./benadryl.jpeg";
-import Antacid from "./Antacid.jpg";
+import Paracetamol from "./Image/Paracetamol+Dolo-650+Uses-+Side+Effects-+Composition+and+Price.jpg";
+import Ibuprofen from "./Image/ibuprofen-400-mg-bp-tablets.jpg";
+import Aspirin from "./Image/aspirin-dispersible-tablets.jpg";
+import CoughSyrup from "./Image/benadryl.jpeg";
+import Antacid from "./Image/Antacid.jpg";
 
 const MedicineContext = createContext();
 
