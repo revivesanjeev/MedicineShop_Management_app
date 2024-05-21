@@ -7,6 +7,10 @@ import CouponSection from "./CouponSection";
 import CartSummary from "./CartSummary";
 import CartToPrint from "./CartToPrint";
 
+
+
+
+
 const Cart = () => {
   const { cart, removeFromCart } = useContext(MedicineContext);
   const [couponCode, setCouponCode] = useState("");

@@ -1,26 +1,41 @@
 import React, { useContext, useState, useEffect } from "react";
 import MedicineContext from "./MedicineContext";
-
 import "./MedicineList.css";
 
+
+
+
 const MedicineList = () => {
+
+
   const { medicines, addToCart } = useContext(MedicineContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMedicines, setFilteredMedicines] = useState(medicines);
 
+
+
+//whenever searchterm or medicines changage then useeffect will run and that will display only those medicine that recieved by filtered medicine 
   useEffect(() => {
     setFilteredMedicines(
       medicines.filter((medicine) =>
         medicine.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  }, [searchTerm, medicines]);
+  }, [searchTerm, medicines]);// passing the function and dependencies for useEffect hooks
 
+
+
+
+//here we are increasing the value of quantity and passing value through addtocart
   const handleAddToCart = (medicine) => {
     if (medicine.quantity > 0) {
       addToCart({ ...medicine, quantity: 1 });
     }
   };
+
+
+
+
 
   return (
     <div className="medicine-list">
@@ -66,6 +81,7 @@ const MedicineList = () => {
               onClick={() => handleAddToCart(medicine)}
               disabled={medicine.quantity <= 0}
               className={medicine.quantity <= 0 ? "disabled" : ""}
+              // set cursor: not-allowed;
             >
               Add to Cart
             </button>

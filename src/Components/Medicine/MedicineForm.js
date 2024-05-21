@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import MedicineContext from "./MedicineContext";
-import "./MedicineForm.css"; // Import the CSS file
+import "./MedicineForm.css";
 
 const MedicineForm = () => {
   const { addMedicine } = useContext(MedicineContext);
+
+  //intial value seeting to " "
   const [medicine, setMedicine] = useState({
     name: "",
     description: "",
@@ -13,22 +15,29 @@ const MedicineForm = () => {
     floor: "",
     rack: "",
   });
-  const [imagePreview, setImagePreview] = useState(null);
+
+  const [imagePreview, setImagePreview] = useState(null); //in start setting it value to null
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setMedicine({ ...medicine, [name]: value });
+    setMedicine({ ...medicine, [name]: value }); //spread the name and setting it to the target value.
   };
+
+  // FileReader API is a part of the HTML5 File API
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
+      // reader.onloadend is an event handler that is called when the read operation is complete.
       reader.onloadend = () => {
         setMedicine({ ...medicine, image: reader.result });
         setImagePreview(reader.result);
       };
       reader.readAsDataURL(file);
+      // It starts the process of reading the file.
+      // It converts the file data into a base64-encoded string, suitable for embedding in web pages.
+      // It triggers the onloadend event, where you can handle the file data as needed (e.g., updating state, displaying a preview).
     }
   };
 
@@ -37,9 +46,10 @@ const MedicineForm = () => {
     const { floor, rack, ...rest } = medicine;
     const newMedicine = {
       ...rest,
-      storageLocation: `${floor}, ${rack}`,
+      storageLocation: `${floor}, ${rack}`, //combining value and setting value to storage location
     };
-    addMedicine(newMedicine);
+    addMedicine(newMedicine); //passing the data
+    //clearing the input feild
     setMedicine({
       name: "",
       description: "",
@@ -49,6 +59,7 @@ const MedicineForm = () => {
       floor: "",
       rack: "",
     });
+    //setting imagepreview to null
     setImagePreview(null);
   };
 

@@ -16,7 +16,7 @@ const CartItem = ({ item, onRemove }) => {
         <strong>Quantity:</strong> {item.quantity}
       </p>
       <button className="decrement-button" onClick={() => onRemove(item)}>
-        -
+        <strong>-</strong>
       </button>
     </li>
   );
