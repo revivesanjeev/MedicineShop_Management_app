@@ -1,9 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import MedicineContext from "./MedicineContext";
-import "./MedicineList.css"; // Ensure this line imports the CSS file where the `.out-of-stock` class is defined
+
+import "./MedicineList.css";
 
 const MedicineList = () => {
   const { medicines, addToCart } = useContext(MedicineContext);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMedicines, setFilteredMedicines] = useState(medicines);
+
+  useEffect(() => {
+    setFilteredMedicines(
+      medicines.filter((medicine) =>
+        medicine.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }, [searchTerm, medicines]);
 
   const handleAddToCart = (medicine) => {
     if (medicine.quantity > 0) {
@@ -12,10 +23,16 @@ const MedicineList = () => {
   };
 
   return (
-    <div>
+    <div className="medicine-list">
       <h2>Medicines Available</h2>
+      <input
+        type="text"
+        placeholder="Search medicine..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <ul>
-        {medicines.map((medicine, index) => (
+        {filteredMedicines.map((medicine, index) => (
           <li key={index}>
             <p>
               <strong>Name:</strong> {medicine.name}
@@ -24,7 +41,7 @@ const MedicineList = () => {
               <strong>Description:</strong> {medicine.description}
             </p>
             <p>
-              <strong>Price:</strong> ${medicine.price}
+              <strong>Price:</strong> ₹{medicine.price}
             </p>
             <p>
               <strong>Quantity Available:</strong>{" "}
@@ -43,12 +60,12 @@ const MedicineList = () => {
               />
             </p>
             <p>
-              <strong>Storage Location:</strong> {medicine.floor},{" "}
-              {medicine.rack}
+              <strong>Storage Location:</strong> {medicine.storageLocation}
             </p>
             <button
               onClick={() => handleAddToCart(medicine)}
               disabled={medicine.quantity <= 0}
+              className={medicine.quantity <= 0 ? "disabled" : ""}
             >
               Add to Cart
             </button>

@@ -1,0 +1,22 @@
+.decrement-button {
+  width: 50px; /* Diameter of the circle */
+  height: 50px; /* Diameter of the circle */
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #f0f0f0;
+  color: #968c8c;
+  font-size: 50px; /* 50% of the diameter */
+  line-height: 0; /* Ensures the minus sign is centered */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.decrement-button:hover {
+  background-color: #9c9797;
+  color: white;
+  border-color: #d32f2f;
+}

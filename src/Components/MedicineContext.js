@@ -1,4 +1,9 @@
 import React, { createContext, useState } from "react";
+import Paracetamol from "./Paracetamol+Dolo-650+Uses-+Side+Effects-+Composition+and+Price.jpg";
+import Ibuprofen from "./ibuprofen-400-mg-bp-tablets.jpg";
+import Aspirin from "./aspirin-dispersible-tablets.jpg";
+import CoughSyrup from "./benadryl.jpeg";
+import Antacid from "./Antacid.jpg";
 
 const MedicineContext = createContext();
 
@@ -9,40 +14,40 @@ export const MedicineProvider = ({ children }) => {
       description: "Used for fever",
       price: 5,
       quantity: 100,
-      image: "paracetamol.jpg",
-      storageLocation: "5th floor, rack 1-10",
+      image: Paracetamol,
+      storageLocation: "3rd floor, Rack 4",
     },
     {
       name: "Ibuprofen",
       description: "Pain reliever",
       price: 10,
       quantity: 50,
-      image: "ibuprofen.jpg",
-      storageLocation: "5th floor, rack 1-10",
+      image: Ibuprofen,
+      storageLocation: "3rd floor, Rack 4",
     },
     {
       name: "Aspirin",
       description: "Reduces pain and fever",
       price: 8,
       quantity: 5,
-      image: "aspirin.jpg",
-      storageLocation: "5th floor, rack 1-10",
+      image: Aspirin,
+      storageLocation: "5th floor, rack 4",
     },
     {
       name: "Cough Syrup",
       description: "Relieves cough",
       price: 15,
       quantity: 40,
-      image: "cough_syrup.jpg",
-      storageLocation: "5th floor, rack 1-10",
+      image: CoughSyrup,
+      storageLocation: "5th floor, rack 1",
     },
     {
       name: "Antacid",
       description: "Relieves heartburn",
       price: 6,
       quantity: 60,
-      image: "antacid.jpg",
-      storageLocation: "5th floor, rack 1-10",
+      image: Antacid,
+      storageLocation: "5th floor, rack 4",
     },
   ];
 
@@ -83,9 +88,31 @@ export const MedicineProvider = ({ children }) => {
     );
   };
 
+  const removeFromCart = (medicine) => {
+    setCart((prevCart) => {
+      const updatedCart = prevCart
+        .map((item) =>
+          item.name === medicine.name
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0);
+
+      return updatedCart;
+    });
+
+    setMedicines((prevMedicines) =>
+      prevMedicines.map((item) =>
+        item.name === medicine.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
   return (
     <MedicineContext.Provider
-      value={{ medicines, cart, addMedicine, addToCart }}
+      value={{ medicines, cart, addMedicine, addToCart, removeFromCart }}
     >
       {children}
     </MedicineContext.Provider>
