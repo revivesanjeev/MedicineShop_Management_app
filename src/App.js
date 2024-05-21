@@ -7,9 +7,9 @@ import "./App.css"; // Import the CSS file
 
 const App = () => {
   return (
-    <MedicineProvider>
-      <div>
-        <h1 className="header_text">Sanjeev Medicine Shop </h1>
+    <MedicineProvider >
+      <div >
+        <h1 className="header_text">Sanjeev Drug Agency </h1>
         <MedicineForm />
         <div className="content">
           <div className="medicine-list-container">
