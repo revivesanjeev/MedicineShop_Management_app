@@ -2,8 +2,10 @@ import React, { createContext, useState } from "react";
 import Paracetamol from "./Image/Paracetamol+Dolo-650+Uses-+Side+Effects-+Composition+and+Price.jpg";
 import Ibuprofen from "./Image/ibuprofen-400-mg-bp-tablets.jpg";
 import Aspirin from "./Image/aspirin-dispersible-tablets.jpg";
-
 import Antacid from "./Image/Antacid.jpg";
+
+
+
 
 const MedicineContext = createContext();
 
