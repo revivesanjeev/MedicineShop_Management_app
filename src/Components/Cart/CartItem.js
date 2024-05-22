@@ -17,6 +17,11 @@ const CartItem = ({ item, onRemove }) => {
       <p>
         <strong>Quantity:</strong> {item.quantity}
       </p>
+
+       <p className="total-section">
+              ₹{item.quantity * item.price} </p>
+
+
       <button className="decrement-button" onClick={() => onRemove(item)}>
         <strong>-</strong>
       </button>

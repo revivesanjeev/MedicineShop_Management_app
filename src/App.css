@@ -1,5 +1,11 @@
 
-
+.address{
+   text-align: center;
+  font-weight: bold;
+  font-size: 1em; 
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
 
 
 .header_text {

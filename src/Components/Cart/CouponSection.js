@@ -6,7 +6,7 @@ import React from "react";
 
 const CouponSection = ({ couponCode, onChange, onApply }) => {
   return (
-    <div className="coupon-section">
+    <div >
       <input
         type="text"
         placeholder="Enter coupon code"

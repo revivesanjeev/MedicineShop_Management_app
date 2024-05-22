@@ -6,9 +6,10 @@
   padding: 20px;
 }
 
-.medicine-list,
-.cart {
-  width: 40%;
+.medicine-list
+{
+  width: 60%;
+  margin-left: 40px ;
 }
 
 input[type="text"] {

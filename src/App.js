@@ -10,6 +10,10 @@ const App = () => {
     <MedicineProvider>
       <div>
         <h1 className="header_text">Sanjeev Drug Agency </h1>
+        <h2>
+        
+          <p className="address">Near Shyama Picture Palace,Sheohar Bihar</p>
+        </h2>
         <MedicineForm />
         <div className="content">
           <div className="medicine-list-container">
